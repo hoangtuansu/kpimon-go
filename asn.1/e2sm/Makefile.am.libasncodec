@@ -1,0 +1,536 @@
+ASN_MODULE_SRCS=	\
+	./e2sm/TimeStamp.c	\
+	./e2sm/BinIndex.c	\
+	./e2sm/BinRangeValue.c	\
+	./e2sm/GranularityPeriod.c	\
+	./e2sm/LogicalOR.c	\
+	./e2sm/MeasurementType.c	\
+	./e2sm/MeasurementTypeName.c	\
+	./e2sm/MeasurementTypeID.c	\
+	./e2sm/MeasurementLabel.c	\
+	./e2sm/TestCondInfo.c	\
+	./e2sm/TestCond-Type.c	\
+	./e2sm/TestCond-Expression.c	\
+	./e2sm/TestCond-Value.c	\
+	./e2sm/BinRangeDefinition.c	\
+	./e2sm/BinRangeList.c	\
+	./e2sm/BinRangeItem.c	\
+	./e2sm/DistMeasurementBinRangeList.c	\
+	./e2sm/DistMeasurementBinRangeItem.c	\
+	./e2sm/MeasurementInfoList.c	\
+	./e2sm/MeasurementInfoItem.c	\
+	./e2sm/LabelInfoList.c	\
+	./e2sm/LabelInfoItem.c	\
+	./e2sm/MeasurementData.c	\
+	./e2sm/MeasurementDataItem.c	\
+	./e2sm/MeasurementRecord.c	\
+	./e2sm/MeasurementRecordItem.c	\
+	./e2sm/MeasurementInfo-Action-List.c	\
+	./e2sm/MeasurementInfo-Action-Item.c	\
+	./e2sm/MeasurementCondList.c	\
+	./e2sm/MeasurementCondItem.c	\
+	./e2sm/MeasurementCondUEidList.c	\
+	./e2sm/MeasurementCondUEidItem.c	\
+	./e2sm/MatchingCondList.c	\
+	./e2sm/MatchingCondItem.c	\
+	./e2sm/MatchingCondItem-Choice.c	\
+	./e2sm/MatchingUEidList.c	\
+	./e2sm/MatchingUEidItem.c	\
+	./e2sm/MatchingUEidPerGP.c	\
+	./e2sm/MatchingUEidPerGP-Item.c	\
+	./e2sm/MatchingUEidList-PerGP.c	\
+	./e2sm/MatchingUEidItem-PerGP.c	\
+	./e2sm/MatchingUeCondPerSubList.c	\
+	./e2sm/MatchingUeCondPerSubItem.c	\
+	./e2sm/MatchingUEidPerSubList.c	\
+	./e2sm/MatchingUEidPerSubItem.c	\
+	./e2sm/UEMeasurementReportList.c	\
+	./e2sm/UEMeasurementReportItem.c	\
+	./e2sm/E2SM-KPM-EventTriggerDefinition.c	\
+	./e2sm/E2SM-KPM-EventTriggerDefinition-Format1.c	\
+	./e2sm/E2SM-KPM-ActionDefinition.c	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format1.c	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format2.c	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format3.c	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format4.c	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format5.c	\
+	./e2sm/E2SM-KPM-IndicationHeader.c	\
+	./e2sm/E2SM-KPM-IndicationHeader-Format1.c	\
+	./e2sm/E2SM-KPM-IndicationMessage.c	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format1.c	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format2.c	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format3.c	\
+	./e2sm/E2SM-KPM-RANfunction-Description.c	\
+	./e2sm/RIC-EventTriggerStyle-Item.c	\
+	./e2sm/RIC-ReportStyle-Item.c	\
+	./e2sm/CGI.c	\
+	./e2sm/CoreCPID.c	\
+	./e2sm/InterfaceIdentifier.c	\
+	./e2sm/InterfaceID-NG.c	\
+	./e2sm/InterfaceID-Xn.c	\
+	./e2sm/InterfaceID-F1.c	\
+	./e2sm/InterfaceID-E1.c	\
+	./e2sm/InterfaceID-S1.c	\
+	./e2sm/InterfaceID-X2.c	\
+	./e2sm/InterfaceID-W1.c	\
+	./e2sm/Interface-MessageID.c	\
+	./e2sm/InterfaceType.c	\
+	./e2sm/GroupID.c	\
+	./e2sm/QoSID.c	\
+	./e2sm/RANfunction-Name.c	\
+	./e2sm/RIC-Format-Type.c	\
+	./e2sm/RIC-Style-Type.c	\
+	./e2sm/RIC-Style-Name.c	\
+	./e2sm/RRC-MessageID.c	\
+	./e2sm/RRCclass-LTE.c	\
+	./e2sm/RRCclass-NR.c	\
+	./e2sm/ServingCell-ARFCN.c	\
+	./e2sm/ServingCell-PCI.c	\
+	./e2sm/UEID.c	\
+	./e2sm/UEID-GNB.c	\
+	./e2sm/UEID-GNB-CU-CP-E1AP-ID-List.c	\
+	./e2sm/UEID-GNB-CU-CP-E1AP-ID-Item.c	\
+	./e2sm/UEID-GNB-CU-F1AP-ID-List.c	\
+	./e2sm/UEID-GNB-CU-CP-F1AP-ID-Item.c	\
+	./e2sm/UEID-GNB-DU.c	\
+	./e2sm/UEID-GNB-CU-UP.c	\
+	./e2sm/UEID-NG-ENB.c	\
+	./e2sm/UEID-NG-ENB-DU.c	\
+	./e2sm/UEID-EN-GNB.c	\
+	./e2sm/UEID-ENB.c	\
+	./e2sm/ENB-ID.c	\
+	./e2sm/GlobalENB-ID.c	\
+	./e2sm/GUMMEI.c	\
+	./e2sm/MME-Group-ID.c	\
+	./e2sm/MME-Code.c	\
+	./e2sm/MME-UE-S1AP-ID.c	\
+	./e2sm/QCI.c	\
+	./e2sm/SubscriberProfileIDforRFP.c	\
+	./e2sm/EN-GNB-ID.c	\
+	./e2sm/ENB-UE-X2AP-ID.c	\
+	./e2sm/ENB-UE-X2AP-ID-Extension.c	\
+	./e2sm/E-UTRA-ARFCN.c	\
+	./e2sm/E-UTRA-PCI.c	\
+	./e2sm/E-UTRA-TAC.c	\
+	./e2sm/GlobalenGNB-ID.c	\
+	./e2sm/NGENB-CU-UE-W1AP-ID.c	\
+	./e2sm/NGENB-DU-ID.c	\
+	./e2sm/AMFPointer.c	\
+	./e2sm/AMFRegionID.c	\
+	./e2sm/AMFSetID.c	\
+	./e2sm/AMF-UE-NGAP-ID.c	\
+	./e2sm/EUTRACellIdentity.c	\
+	./e2sm/EUTRA-CGI.c	\
+	./e2sm/FiveQI.c	\
+	./e2sm/GlobalGNB-ID.c	\
+	./e2sm/GlobalNgENB-ID.c	\
+	./e2sm/GNB-ID.c	\
+	./e2sm/GUAMI.c	\
+	./e2sm/IndexToRFSP.c	\
+	./e2sm/NgENB-ID.c	\
+	./e2sm/NRCellIdentity.c	\
+	./e2sm/NR-CGI.c	\
+	./e2sm/PLMNIdentity.c	\
+	./e2sm/QosFlowIdentifier.c	\
+	./e2sm/SD.c	\
+	./e2sm/S-NSSAI.c	\
+	./e2sm/SST.c	\
+	./e2sm/NG-RANnodeUEXnAPID.c	\
+	./e2sm/GlobalNGRANNodeID.c	\
+	./e2sm/GNB-CU-CP-UE-E1AP-ID.c	\
+	./e2sm/GNB-CU-UP-ID.c	\
+	./e2sm/FiveGS-TAC.c	\
+	./e2sm/FreqBandNrItem.c	\
+	./e2sm/GNB-CU-UE-F1AP-ID.c	\
+	./e2sm/GNB-DU-ID.c	\
+	./e2sm/NR-PCI.c	\
+	./e2sm/NR-ARFCN.c	\
+	./e2sm/NRFrequencyBand-List.c	\
+	./e2sm/NRFrequencyBandItem.c	\
+	./e2sm/NRFrequencyInfo.c	\
+	./e2sm/NRFrequencyShift7p5khz.c	\
+	./e2sm/RANUEID.c	\
+	./e2sm/SupportedSULBandList.c	\
+	./e2sm/SupportedSULFreqBandItem.c	\
+	./e2sm/EXTERNAL.c
+
+ASN_MODULE_HDRS=	\
+	./e2sm/TimeStamp.h	\
+	./e2sm/BinIndex.h	\
+	./e2sm/BinRangeValue.h	\
+	./e2sm/GranularityPeriod.h	\
+	./e2sm/LogicalOR.h	\
+	./e2sm/MeasurementType.h	\
+	./e2sm/MeasurementTypeName.h	\
+	./e2sm/MeasurementTypeID.h	\
+	./e2sm/MeasurementLabel.h	\
+	./e2sm/TestCondInfo.h	\
+	./e2sm/TestCond-Type.h	\
+	./e2sm/TestCond-Expression.h	\
+	./e2sm/TestCond-Value.h	\
+	./e2sm/BinRangeDefinition.h	\
+	./e2sm/BinRangeList.h	\
+	./e2sm/BinRangeItem.h	\
+	./e2sm/DistMeasurementBinRangeList.h	\
+	./e2sm/DistMeasurementBinRangeItem.h	\
+	./e2sm/MeasurementInfoList.h	\
+	./e2sm/MeasurementInfoItem.h	\
+	./e2sm/LabelInfoList.h	\
+	./e2sm/LabelInfoItem.h	\
+	./e2sm/MeasurementData.h	\
+	./e2sm/MeasurementDataItem.h	\
+	./e2sm/MeasurementRecord.h	\
+	./e2sm/MeasurementRecordItem.h	\
+	./e2sm/MeasurementInfo-Action-List.h	\
+	./e2sm/MeasurementInfo-Action-Item.h	\
+	./e2sm/MeasurementCondList.h	\
+	./e2sm/MeasurementCondItem.h	\
+	./e2sm/MeasurementCondUEidList.h	\
+	./e2sm/MeasurementCondUEidItem.h	\
+	./e2sm/MatchingCondList.h	\
+	./e2sm/MatchingCondItem.h	\
+	./e2sm/MatchingCondItem-Choice.h	\
+	./e2sm/MatchingUEidList.h	\
+	./e2sm/MatchingUEidItem.h	\
+	./e2sm/MatchingUEidPerGP.h	\
+	./e2sm/MatchingUEidPerGP-Item.h	\
+	./e2sm/MatchingUEidList-PerGP.h	\
+	./e2sm/MatchingUEidItem-PerGP.h	\
+	./e2sm/MatchingUeCondPerSubList.h	\
+	./e2sm/MatchingUeCondPerSubItem.h	\
+	./e2sm/MatchingUEidPerSubList.h	\
+	./e2sm/MatchingUEidPerSubItem.h	\
+	./e2sm/UEMeasurementReportList.h	\
+	./e2sm/UEMeasurementReportItem.h	\
+	./e2sm/E2SM-KPM-EventTriggerDefinition.h	\
+	./e2sm/E2SM-KPM-EventTriggerDefinition-Format1.h	\
+	./e2sm/E2SM-KPM-ActionDefinition.h	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format1.h	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format2.h	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format3.h	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format4.h	\
+	./e2sm/E2SM-KPM-ActionDefinition-Format5.h	\
+	./e2sm/E2SM-KPM-IndicationHeader.h	\
+	./e2sm/E2SM-KPM-IndicationHeader-Format1.h	\
+	./e2sm/E2SM-KPM-IndicationMessage.h	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format1.h	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format2.h	\
+	./e2sm/E2SM-KPM-IndicationMessage-Format3.h	\
+	./e2sm/E2SM-KPM-RANfunction-Description.h	\
+	./e2sm/RIC-EventTriggerStyle-Item.h	\
+	./e2sm/RIC-ReportStyle-Item.h	\
+	./e2sm/CGI.h	\
+	./e2sm/CoreCPID.h	\
+	./e2sm/InterfaceIdentifier.h	\
+	./e2sm/InterfaceID-NG.h	\
+	./e2sm/InterfaceID-Xn.h	\
+	./e2sm/InterfaceID-F1.h	\
+	./e2sm/InterfaceID-E1.h	\
+	./e2sm/InterfaceID-S1.h	\
+	./e2sm/InterfaceID-X2.h	\
+	./e2sm/InterfaceID-W1.h	\
+	./e2sm/Interface-MessageID.h	\
+	./e2sm/InterfaceType.h	\
+	./e2sm/GroupID.h	\
+	./e2sm/QoSID.h	\
+	./e2sm/RANfunction-Name.h	\
+	./e2sm/RIC-Format-Type.h	\
+	./e2sm/RIC-Style-Type.h	\
+	./e2sm/RIC-Style-Name.h	\
+	./e2sm/RRC-MessageID.h	\
+	./e2sm/RRCclass-LTE.h	\
+	./e2sm/RRCclass-NR.h	\
+	./e2sm/ServingCell-ARFCN.h	\
+	./e2sm/ServingCell-PCI.h	\
+	./e2sm/UEID.h	\
+	./e2sm/UEID-GNB.h	\
+	./e2sm/UEID-GNB-CU-CP-E1AP-ID-List.h	\
+	./e2sm/UEID-GNB-CU-CP-E1AP-ID-Item.h	\
+	./e2sm/UEID-GNB-CU-F1AP-ID-List.h	\
+	./e2sm/UEID-GNB-CU-CP-F1AP-ID-Item.h	\
+	./e2sm/UEID-GNB-DU.h	\
+	./e2sm/UEID-GNB-CU-UP.h	\
+	./e2sm/UEID-NG-ENB.h	\
+	./e2sm/UEID-NG-ENB-DU.h	\
+	./e2sm/UEID-EN-GNB.h	\
+	./e2sm/UEID-ENB.h	\
+	./e2sm/ENB-ID.h	\
+	./e2sm/GlobalENB-ID.h	\
+	./e2sm/GUMMEI.h	\
+	./e2sm/MME-Group-ID.h	\
+	./e2sm/MME-Code.h	\
+	./e2sm/MME-UE-S1AP-ID.h	\
+	./e2sm/QCI.h	\
+	./e2sm/SubscriberProfileIDforRFP.h	\
+	./e2sm/EN-GNB-ID.h	\
+	./e2sm/ENB-UE-X2AP-ID.h	\
+	./e2sm/ENB-UE-X2AP-ID-Extension.h	\
+	./e2sm/E-UTRA-ARFCN.h	\
+	./e2sm/E-UTRA-PCI.h	\
+	./e2sm/E-UTRA-TAC.h	\
+	./e2sm/GlobalenGNB-ID.h	\
+	./e2sm/NGENB-CU-UE-W1AP-ID.h	\
+	./e2sm/NGENB-DU-ID.h	\
+	./e2sm/AMFPointer.h	\
+	./e2sm/AMFRegionID.h	\
+	./e2sm/AMFSetID.h	\
+	./e2sm/AMF-UE-NGAP-ID.h	\
+	./e2sm/EUTRACellIdentity.h	\
+	./e2sm/EUTRA-CGI.h	\
+	./e2sm/FiveQI.h	\
+	./e2sm/GlobalGNB-ID.h	\
+	./e2sm/GlobalNgENB-ID.h	\
+	./e2sm/GNB-ID.h	\
+	./e2sm/GUAMI.h	\
+	./e2sm/IndexToRFSP.h	\
+	./e2sm/NgENB-ID.h	\
+	./e2sm/NRCellIdentity.h	\
+	./e2sm/NR-CGI.h	\
+	./e2sm/PLMNIdentity.h	\
+	./e2sm/QosFlowIdentifier.h	\
+	./e2sm/SD.h	\
+	./e2sm/S-NSSAI.h	\
+	./e2sm/SST.h	\
+	./e2sm/NG-RANnodeUEXnAPID.h	\
+	./e2sm/GlobalNGRANNodeID.h	\
+	./e2sm/GNB-CU-CP-UE-E1AP-ID.h	\
+	./e2sm/GNB-CU-UP-ID.h	\
+	./e2sm/FiveGS-TAC.h	\
+	./e2sm/FreqBandNrItem.h	\
+	./e2sm/GNB-CU-UE-F1AP-ID.h	\
+	./e2sm/GNB-DU-ID.h	\
+	./e2sm/NR-PCI.h	\
+	./e2sm/NR-ARFCN.h	\
+	./e2sm/NRFrequencyBand-List.h	\
+	./e2sm/NRFrequencyBandItem.h	\
+	./e2sm/NRFrequencyInfo.h	\
+	./e2sm/NRFrequencyShift7p5khz.h	\
+	./e2sm/RANUEID.h	\
+	./e2sm/SupportedSULBandList.h	\
+	./e2sm/SupportedSULFreqBandItem.h	\
+	./e2sm/EXTERNAL.h
+
+ASN_MODULE_HDRS+=./e2sm/ANY.h
+ASN_MODULE_SRCS+=./e2sm/ANY.c
+ASN_MODULE_HDRS+=./e2sm/OCTET_STRING.h
+ASN_MODULE_HDRS+=./e2sm/OPEN_TYPE.h
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE.c
+ASN_MODULE_HDRS+=./e2sm/constr_CHOICE.h
+ASN_MODULE_HDRS+=./e2sm/BOOLEAN.h
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN.c
+ASN_MODULE_HDRS+=./e2sm/GraphicString.h
+ASN_MODULE_SRCS+=./e2sm/GraphicString.c
+ASN_MODULE_HDRS+=./e2sm/INTEGER.h
+ASN_MODULE_SRCS+=./e2sm/INTEGER.c
+ASN_MODULE_HDRS+=./e2sm/NULL.h
+ASN_MODULE_SRCS+=./e2sm/NULL.c
+ASN_MODULE_HDRS+=./e2sm/NativeEnumerated.h
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated.c
+ASN_MODULE_HDRS+=./e2sm/NativeInteger.h
+ASN_MODULE_SRCS+=./e2sm/NativeInteger.c
+ASN_MODULE_HDRS+=./e2sm/NativeReal.h
+ASN_MODULE_SRCS+=./e2sm/NativeReal.c
+ASN_MODULE_HDRS+=./e2sm/REAL.h
+ASN_MODULE_HDRS+=./e2sm/OBJECT_IDENTIFIER.h
+ASN_MODULE_SRCS+=./e2sm/OBJECT_IDENTIFIER.c
+ASN_MODULE_HDRS+=./e2sm/asn_codecs_prim.h
+ASN_MODULE_HDRS+=./e2sm/ObjectDescriptor.h
+ASN_MODULE_SRCS+=./e2sm/ObjectDescriptor.c
+ASN_MODULE_HDRS+=./e2sm/PrintableString.h
+ASN_MODULE_SRCS+=./e2sm/PrintableString.c
+ASN_MODULE_SRCS+=./e2sm/REAL.c
+ASN_MODULE_HDRS+=./e2sm/asn_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=./e2sm/asn_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=./e2sm/asn_SET_OF.h
+ASN_MODULE_SRCS+=./e2sm/asn_SET_OF.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE.c
+ASN_MODULE_HDRS+=./e2sm/constr_SEQUENCE.h
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE.c
+ASN_MODULE_HDRS+=./e2sm/constr_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=./e2sm/constr_SET_OF.h
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF.c
+ASN_MODULE_HDRS+=./e2sm/asn_application.h
+ASN_MODULE_SRCS+=./e2sm/asn_application.c
+ASN_MODULE_HDRS+=./e2sm/asn_ioc.h
+ASN_MODULE_HDRS+=./e2sm/asn_system.h
+ASN_MODULE_HDRS+=./e2sm/asn_codecs.h
+ASN_MODULE_HDRS+=./e2sm/asn_internal.h
+ASN_MODULE_SRCS+=./e2sm/asn_internal.c
+ASN_MODULE_HDRS+=./e2sm/asn_bit_data.h
+ASN_MODULE_SRCS+=./e2sm/asn_bit_data.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING.c
+ASN_MODULE_HDRS+=./e2sm/BIT_STRING.h
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING.c
+ASN_MODULE_SRCS+=./e2sm/asn_codecs_prim.c
+ASN_MODULE_HDRS+=./e2sm/ber_tlv_length.h
+ASN_MODULE_SRCS+=./e2sm/ber_tlv_length.c
+ASN_MODULE_HDRS+=./e2sm/ber_tlv_tag.h
+ASN_MODULE_SRCS+=./e2sm/ber_tlv_tag.c
+ASN_MODULE_HDRS+=./e2sm/constr_TYPE.h
+ASN_MODULE_SRCS+=./e2sm/constr_TYPE.c
+ASN_MODULE_HDRS+=./e2sm/constraints.h
+ASN_MODULE_SRCS+=./e2sm/constraints.c
+ASN_MODULE_HDRS+=./e2sm/ber_decoder.h
+ASN_MODULE_HDRS+=./e2sm/der_encoder.h
+ASN_MODULE_SRCS+=./e2sm/ber_decoder.c
+ASN_MODULE_SRCS+=./e2sm/der_encoder.c
+ASN_MODULE_SRCS+=./e2sm/ANY_ber.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_ber.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_ber.c
+ASN_MODULE_SRCS+=./e2sm/NULL_ber.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_ber.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_ber.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_ber.c
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE_ber.c
+ASN_MODULE_SRCS+=./e2sm/asn_codecs_prim_ber.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_ber.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF_ber.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_ber.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_ber.c
+ASN_MODULE_HDRS+=./e2sm/xer_support.h
+ASN_MODULE_HDRS+=./e2sm/xer_decoder.h
+ASN_MODULE_HDRS+=./e2sm/xer_encoder.h
+ASN_MODULE_SRCS+=./e2sm/xer_support.c
+ASN_MODULE_SRCS+=./e2sm/xer_decoder.c
+ASN_MODULE_SRCS+=./e2sm/xer_encoder.c
+ASN_MODULE_SRCS+=./e2sm/ANY_xer.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_xer.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_xer.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_xer.c
+ASN_MODULE_SRCS+=./e2sm/NULL_xer.c
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated_xer.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_xer.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_xer.c
+ASN_MODULE_SRCS+=./e2sm/OBJECT_IDENTIFIER_xer.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_xer.c
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE_xer.c
+ASN_MODULE_SRCS+=./e2sm/REAL_xer.c
+ASN_MODULE_SRCS+=./e2sm/asn_codecs_prim_xer.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_xer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF_xer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_xer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_xer.c
+ASN_MODULE_HDRS+=./e2sm/oer_decoder.h
+ASN_MODULE_HDRS+=./e2sm/oer_encoder.h
+ASN_MODULE_HDRS+=./e2sm/oer_support.h
+ASN_MODULE_SRCS+=./e2sm/oer_decoder.c
+ASN_MODULE_SRCS+=./e2sm/oer_encoder.c
+ASN_MODULE_SRCS+=./e2sm/oer_support.c
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE_oer.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_oer.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_oer.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_oer.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_oer.c
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated_oer.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_oer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_oer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_oer.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_oer.c
+ASN_MODULE_SRCS+=./e2sm/NULL_oer.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_oer.c
+ASN_MODULE_SRCS+=./e2sm/REAL_oer.c
+ASN_MODULE_HDRS+=./e2sm/per_decoder.h
+ASN_MODULE_HDRS+=./e2sm/per_encoder.h
+ASN_MODULE_HDRS+=./e2sm/per_support.h
+ASN_MODULE_HDRS+=./e2sm/per_opentype.h
+ASN_MODULE_SRCS+=./e2sm/per_decoder.c
+ASN_MODULE_SRCS+=./e2sm/per_encoder.c
+ASN_MODULE_SRCS+=./e2sm/per_support.c
+ASN_MODULE_SRCS+=./e2sm/per_opentype.c
+ASN_MODULE_HDRS+=./e2sm/uper_decoder.h
+ASN_MODULE_HDRS+=./e2sm/uper_encoder.h
+ASN_MODULE_HDRS+=./e2sm/uper_support.h
+ASN_MODULE_HDRS+=./e2sm/uper_opentype.h
+ASN_MODULE_SRCS+=./e2sm/uper_decoder.c
+ASN_MODULE_SRCS+=./e2sm/uper_encoder.c
+ASN_MODULE_SRCS+=./e2sm/uper_support.c
+ASN_MODULE_SRCS+=./e2sm/uper_opentype.c
+ASN_MODULE_SRCS+=./e2sm/ANY_uper.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_uper.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_uper.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_uper.c
+ASN_MODULE_SRCS+=./e2sm/NULL_uper.c
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated_uper.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_uper.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_uper.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_uper.c
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE_uper.c
+ASN_MODULE_SRCS+=./e2sm/REAL_uper.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_uper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF_uper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_uper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_uper.c
+ASN_MODULE_HDRS+=./e2sm/aper_decoder.h
+ASN_MODULE_HDRS+=./e2sm/aper_encoder.h
+ASN_MODULE_HDRS+=./e2sm/aper_support.h
+ASN_MODULE_HDRS+=./e2sm/aper_opentype.h
+ASN_MODULE_SRCS+=./e2sm/aper_decoder.c
+ASN_MODULE_SRCS+=./e2sm/aper_encoder.c
+ASN_MODULE_SRCS+=./e2sm/aper_support.c
+ASN_MODULE_SRCS+=./e2sm/aper_opentype.c
+ASN_MODULE_SRCS+=./e2sm/ANY_aper.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_aper.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_aper.c
+ASN_MODULE_SRCS+=./e2sm/NULL_aper.c
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated_aper.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_aper.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_aper.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_aper.c
+ASN_MODULE_SRCS+=./e2sm/OPEN_TYPE_aper.c
+ASN_MODULE_SRCS+=./e2sm/REAL_aper.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_aper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF_aper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_aper.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_aper.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_print.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_print.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_print.c
+ASN_MODULE_SRCS+=./e2sm/NULL_print.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_print.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_print.c
+ASN_MODULE_SRCS+=./e2sm/OBJECT_IDENTIFIER_print.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_print.c
+ASN_MODULE_SRCS+=./e2sm/REAL_print.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_print.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_print.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_print.c
+ASN_MODULE_HDRS+=./e2sm/asn_random_fill.h
+ASN_MODULE_SRCS+=./e2sm/asn_random_fill.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_rfill.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_rfill.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_rfill.c
+ASN_MODULE_SRCS+=./e2sm/NULL_rfill.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_rfill.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_rfill.c
+ASN_MODULE_SRCS+=./e2sm/OBJECT_IDENTIFIER_rfill.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_rfill.c
+ASN_MODULE_SRCS+=./e2sm/REAL_rfill.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_rfill.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_rfill.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_rfill.c
+ASN_MODULE_HDRS+=./e2sm/jer_encoder.h
+ASN_MODULE_SRCS+=./e2sm/jer_encoder.c
+ASN_MODULE_SRCS+=./e2sm/ANY_jer.c
+ASN_MODULE_SRCS+=./e2sm/BIT_STRING_jer.c
+ASN_MODULE_SRCS+=./e2sm/BOOLEAN_jer.c
+ASN_MODULE_SRCS+=./e2sm/INTEGER_jer.c
+ASN_MODULE_SRCS+=./e2sm/NULL_jer.c
+ASN_MODULE_SRCS+=./e2sm/NativeEnumerated_jer.c
+ASN_MODULE_SRCS+=./e2sm/NativeInteger_jer.c
+ASN_MODULE_SRCS+=./e2sm/NativeReal_jer.c
+ASN_MODULE_SRCS+=./e2sm/OBJECT_IDENTIFIER_jer.c
+ASN_MODULE_SRCS+=./e2sm/OCTET_STRING_jer.c
+ASN_MODULE_SRCS+=./e2sm/REAL_jer.c
+ASN_MODULE_SRCS+=./e2sm/constr_CHOICE_jer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_OF_jer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SEQUENCE_jer.c
+ASN_MODULE_SRCS+=./e2sm/constr_SET_OF_jer.c
+
+ASN_MODULE_CFLAGS=
+
+lib_LTLIBRARIES+=libasncodec.la
+libasncodec_la_SOURCES=$(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+libasncodec_la_CPPFLAGS=-I$(top_srcdir)/./e2sm/
+libasncodec_la_CFLAGS=$(ASN_MODULE_CFLAGS)
+libasncodec_la_LDFLAGS=-lm

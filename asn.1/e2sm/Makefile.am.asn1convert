@@ -1,0 +1,14 @@
+include ./e2sm/Makefile.am.libasncodec
+
+bin_PROGRAMS += asn1convert
+asn1convert_CFLAGS = $(ASN_MODULE_CFLAGS) 
+asn1convert_CPPFLAGS = -I$(top_srcdir)/-DASN_PDU_COLLECTION 
+asn1convert_LDADD = libasncodec.la
+asn1convert_SOURCES = \
+	./e2sm/converter-example.c\
+	./e2sm/pdu_collection.c
+regen: regenerate-from-asn1-source
+
+regenerate-from-asn1-source:
+	asn1c -D ./e2sm kpm_v3.asn e2sm_v3.asn
+
