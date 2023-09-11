@@ -26,5 +26,5 @@ clean:
 regen: regenerate-from-asn1-source
 
 regenerate-from-asn1-source:
-	asn1c -D ./e2sm kpm_v3.asn e2sm_v3.asn
+	asn1c -pdu=auto -D ./e2sm kpm_v3.asn e2sm_v3.asn
 
