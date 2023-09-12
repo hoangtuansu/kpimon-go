@@ -10,7 +10,6 @@
 
 #include "asn_system.h"		/* for platform-dependent types */
 #include "asn_codecs.h"		/* for ASN.1 codecs specifics */
-#include "asn_config.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,7 +24,7 @@ enum asn_transfer_syntax {
     ATS_INVALID = 0,
     /* Plaintext output (not conforming to any standard), for debugging. */
     ATS_NONSTANDARD_PLAINTEXT,
-    /* Returns a randomly generated structure. */
+    /* Returns a randomly generatede structure. */
     ATS_RANDOM,
     /*
      * X.690:
@@ -52,16 +51,13 @@ enum asn_transfer_syntax {
      */
     ATS_UNALIGNED_BASIC_PER,
     ATS_UNALIGNED_CANONICAL_PER,
-    ATS_ALIGNED_BASIC_PER,
-    ATS_ALIGNED_CANONICAL_PER,
     /*
      * X.693:
      * XER: XML Encoding Rules.
      * CANONICAL-XER is a more strict variant of BASIC-XER.
      */
     ATS_BASIC_XER,
-    ATS_CANONICAL_XER,
-    ATS_JER,
+    ATS_CANONICAL_XER
 };
 
 /*
